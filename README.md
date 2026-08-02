@@ -1,6 +1,6 @@
- #📊 Análise de Cancelamentos - E-commerce Olist
+ # 📊 Análise de Cancelamentos - E-commerce Olist
 
- #📌 Para que serve este projeto?
+ # 📌 Para que serve este projeto?
 
 Este projeto tem como objetivo analisar os cancelamentos de pedidos em uma base de dados de e-commerce.
 
@@ -28,22 +28,13 @@ Identificar quais lojas possuem a maior quantidade de pedidos cancelados.
 
 ### Código SQL:
 
-SELECT
-    v.id_vendedor,
-    COUNT(Distinct p.id_pedido) AS total_cancelados
-FROM vendedores v
-INNER JOIN itens_pedido ip
-    ON ip.id_vendedor = v.id_vendedor
-INNER JOIN pedidos p
-    ON p.id_pedido = ip.id_pedido
-WHERE p.status_pedido = 'canceled'
-GROUP BY v.id_vendedor
-order by  total_cancelados desc
-limit 15; 
+![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/Screenshot%202026-08-02%20013212.png)
+
 
 ### Resultado:
 
-📌 Inserir print da consulta ou gráfico aqui.
+![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/Screenshot%202026-08-02%20011711.png)
+
 
 ---
 
@@ -55,22 +46,11 @@ Identificar quais produtos e categorias possuem maior concentração de cancelam
 
 ### Código SQL:
 
-SELECT pro.nome_categoria_produto,
-	COUNT(Distinct p.id_pedido) As qtd_total_cancelados
-FROM itens_pedido itens 
-INNER JOIN produtos pro 
-	ON itens.id_produto=pro.id_produto
-INNER JOIN pedidos p
-	ON itens.id_pedido=p.id_pedido
-WHERE status_pedido ='canceled' 	
-GROUP BY pro.nome_categoria_produto,
-		itens.id_produto 
-ORDER BY qtd_total_cancelados desc		
-LIMIT 15 ;
+![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/Screenshot%202026-08-02%20013308.png)
 
 ### Resultado:
 
-📌 Inserir print da consulta ou gráfico aqui.
+![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/Screenshot%202026-08-02%20013346.png)
 
 ---
 
@@ -82,20 +62,11 @@ Identificar quais estados apresentam maior quantidade de pedidos cancelados.
 
 ### Código SQL:
 
-SELECT v.estado_vendedor,
-	COUNT(Distinct p.id_pedido)AS qtd_cancelados
-FROM itens_pedido itens
-INNER JOIN vendedores v
-	on itens.id_vendedor=v.id_vendedor
-INNER JOIN pedidos p 
-	ON itens.id_pedido=p.id_pedido
-WHERE status_pedido = 'canceled'
-GROUP BY estado_vendedor
-ORDER BY qtd_cancelados desc
+![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/estados/Screenshot%202026-08-02%20013507.png)
 
 ### Resultado:
 
-📌 Inserir print da consulta ou gráfico aqui.
+![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/estados/Screenshot%202026-08-02%20013439.png)
 
 ---
 
