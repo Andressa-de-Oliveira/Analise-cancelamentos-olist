@@ -8,7 +8,7 @@ A análise busca identificar quais lojas, produtos, categorias e estados concent
 
 ---
 
-# 📊 Análise Descritiva — O que aconteceu?
+## 📊 Análise Descritiva — O que aconteceu?
 
 Nesta etapa, o objetivo foi entender o cenário dos cancelamentos e identificar onde eles estão concentrados.
 
@@ -28,14 +28,15 @@ Foram analisados:
 
 ### Código SQL:
 
-
-![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/imagens/vendedor/Screenshot 2026-08-11 230336.png)
-
+![código SQL](imagens/vendedor/Screenshot%202026-08-11%20230336.png)
 
 ### Resultado:
 
-![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/imagens/vendedor/Screenshot 2026-08-11 230525.png)
+![Resultado](imagens/vendedor/Screenshot%202026-08-11%20230525.png)
 
+### Insight: 
+
+Entre as 15 lojas com maior número de cancelamentos, as duas primeiras se destacam por concentrar o maior impacto financeiro. O vendedor no topo do ranking está localizada em Barueri, São Paulo (ID finalizado em 753a), e merece atenção especial — recomenda-se uma análise mais aprofundada dos produtos , frete e vendedor .
 
 ---
 
@@ -43,15 +44,19 @@ Foram analisados:
 
 ### Objetivo da análise:
 
-Identificar quais produtos e categorias possuem maior concentração de cancelamentos.
+Identificar quais produtos e categorias possuem maior concentração de cancelamentos e impacto financeiro .
 
 ### Código SQL:
 
-![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/Screenshot%202026-08-02%20013308.png)
+![codigo SQL](imagens/produtos/Screenshot%202026-08-11%20233400.png)
 
 ### Resultado:
 
-![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/Screenshot%202026-08-02%20013346.png)
+![produtos](imagens/produtos/Screenshot%202026-08-11%20233537.png)
+
+### Insight:
+
+Nem sempre os produtos com maior número de cancelamentos são os que apresentam maior impacto financeiro. Ou seja, volume de cancelamentos e impacto monetário não estão necessariamente correlacionados. A categoria que demanda maior atenção é a cool-stuff, por apresentar impacto financeiro relevante nos cancelamentos.
 
 ---
 
@@ -59,29 +64,34 @@ Identificar quais produtos e categorias possuem maior concentração de cancelam
 
 ### Objetivo da análise:
 
-Identificar quais estados apresentam maior quantidade de pedidos cancelados.
+Identificar os vendedores com maior quantidade de pedidos cancelados, considerando estado, cidade e impacto financeiro.
 
 ### Código SQL:
 
-![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/estados/Screenshot%202026-08-02%20013507.png)
+![estados](imagens/estados/Screenshot%202026-08-11%20235542.png)
 
 ### Resultado:
 
-![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/estados/Screenshot%202026-08-02%20013439.png)
+![estados](imagens/estados/Screenshot%202026-08-11%20235622.png)
+
+### Insight:
+
+As regiões com maior volume de cancelamentos estão concentradas no estado de São Paulo, especialmente nas cidades de Barueri e Sorocaba.
 
 ---
 
 # 💡 Análise Prescritiva — O que pode ser feito?
 
-Com base nos resultados encontrados, algumas ações podem ser avaliadas:
 
-* Verificar os produtos com maiores índices de cancelamento;
-* Avaliar as lojas e estados com maior concentração de cancelamentos;
-* Buscar entender os motivos dos cancelamentos nessas regiões;
-* Criar estratégias para reduzir cancelamentos e melhorar a experiência do cliente.
+## Com base nos resultados encontrados, algumas ações podem ser avaliadas:
+
+*Investigar a loja de Barueri (ID final 753a) e as demais entre as duas primeiras do ranking, dado seu maior impacto financeiro em cancelamentos; 
+*Dar atenção especial à categoria cool-stuff, que concentra maior impacto financeiro nos cancelamentos; 
+*Avaliar as lojas e estados com maior concentração de cancelamentos, com foco em São Paulo, Barueri e Sorocaba; 
+*Investigar possíveis causas dos cancelamentos, como valor do frete, atrasos na entrega e problemas relacionados aos produtos; 
+*Criar estratégias para reduzir cancelamentos e melhorar a experiência do cliente.
 
 ---
-
 # 🗂️ Sobre os dados utilizados
 
 Os dados utilizados pertencem à base pública Olist.
@@ -107,10 +117,12 @@ Foram utilizadas informações de:
 
 * SELECT → seleção dos dados;
 * JOIN → ligação entre tabelas relacionadas;
+* SUBQUERY → cálculo intermediário usado como filtro (ex: ranquear e limitar as lojas antes de somar o valor);
 * WHERE → filtro dos dados;
 * GROUP BY → agrupamento das informações;
 * COUNT → contagem dos registros;
 * ORDER BY → organização dos resultados.
+  
 
 ---
 
