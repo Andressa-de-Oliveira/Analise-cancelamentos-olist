@@ -24,16 +24,17 @@ Foram analisados:
 
 ### Objetivo da análise:
 
-Identificar quais lojas possuem a maior quantidade de pedidos cancelados.
+ identificar quais lojas possuem a maior quantidade de pedidos cancelados e qual o impacto financeiro de cada uma.
 
 ### Código SQL:
 
-![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/Screenshot%202026-08-02%20013212.png)
+
+![codigo SQL](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/produtos/imagens/vendedor/Screenshot 2026-08-11 230336.png)
 
 
 ### Resultado:
 
-![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/Screenshot%202026-08-02%20011711.png)
+![Resultado](https://github.com/Andressa-de-Oliveira/Analise-cancelamentos-olist/blob/main/imagens/vendedor/imagens/vendedor/Screenshot 2026-08-11 230525.png)
 
 
 ---
