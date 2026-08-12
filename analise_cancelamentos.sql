@@ -21,7 +21,7 @@ INNER JOIN
 		    ON lojas15.id_vendedor = itens.id_vendedor
    	    WHERE p.status_pedido = 'canceled'
 		GROUP BY lojas15.id_vendedor
-		ORDER BY valor_cancelados DESC);
+		ORDER BY valor_cancelados DESC;
 
 --Quais produtos apresentam o maior número de cancelamentos, 
 --a quais categorias pertencem e qual o impacto financeiro desses cancelamentos?
