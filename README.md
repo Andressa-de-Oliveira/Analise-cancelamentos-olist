@@ -12,11 +12,11 @@ A análise busca identificar quais lojas, produtos, categorias e estados concent
 
 Nesta etapa, o objetivo foi entender o cenário dos cancelamentos e identificar onde eles estão concentrados.
 
-Foram analisados:
+  Foram analisados:
 
-* As 15 lojas com maior quantidade de cancelamentos;
-* Os produtos e categorias com maior número de cancelamentos;
-* Os estados com maior quantidade de cancelamentos.
+-  As 15 lojas com maior quantidade de cancelamentos;
+-  Os produtos e categorias com maior número de cancelamentos;
+-  Os estados com maior quantidade de cancelamentos.
 
 ---
 
@@ -85,11 +85,11 @@ As regiões com maior volume de cancelamentos estão concentradas no estado de S
 
 ## Com base nos resultados encontrados, algumas ações podem ser avaliadas:
 
-*Investigar a loja de Barueri (ID final 753a) e as demais entre as duas primeiras do ranking, dado seu maior impacto financeiro em cancelamentos; 
-*Dar atenção especial à categoria cool-stuff, que concentra maior impacto financeiro nos cancelamentos; 
-*Avaliar as lojas e estados com maior concentração de cancelamentos, com foco em São Paulo, Barueri e Sorocaba; 
-*Investigar possíveis causas dos cancelamentos, como valor do frete, atrasos na entrega e problemas relacionados aos produtos; 
-*Criar estratégias para reduzir cancelamentos e melhorar a experiência do cliente.
+- Investigar a loja de Barueri (ID final 753a) e as demais entre as duas primeiras do ranking, dado seu maior impacto          financeiro em cancelamentos; 
+- Dar atenção especial à categoria cool-stuff, que concentra maior impacto financeiro nos cancelamentos; 
+- Avaliar as lojas e estados com maior concentração de cancelamentos, com foco em São Paulo, Barueri e Sorocaba; 
+- Investigar possíveis causas dos cancelamentos, como valor do frete, atrasos na entrega e problemas relacionados aos          produtos; 
+- Criar estratégias para reduzir cancelamentos e melhorar a experiência do cliente.
 
 ---
 # 🗂️ Sobre os dados utilizados
@@ -98,30 +98,30 @@ Os dados utilizados pertencem à base pública Olist.
 
 Foram utilizadas informações de:
 
-* **Pedidos:** informações das compras realizadas e seus status;
-* **Vendedores:** cadastro das lojas que realizaram as vendas;
-* **Produtos:** informações dos produtos e suas categorias;
-* **Itens do pedido:** relação entre pedidos e produtos vendidos.
+-  **Pedidos:** informações das compras realizadas e seus status;
+-  **Vendedores:** cadastro das lojas que realizaram as vendas;
+-  **Produtos:** informações dos produtos e suas categorias;
+-  **Itens do pedido:** relação entre pedidos e produtos vendidos.
 
 ---
 
 # 🛠️ Tecnologias utilizadas
 
-* PostgreSQL
-* SQL
-* GitHub
+ -  PostgreSQL
+ -  SQL
+ -  GitHub
 
 ---
 
 # 📚 Conceitos aplicados
 
-* SELECT → seleção dos dados;
-* JOIN → ligação entre tabelas relacionadas;
-* SUBQUERY → cálculo intermediário usado como filtro (ex: ranquear e limitar as lojas antes de somar o valor);
-* WHERE → filtro dos dados;
-* GROUP BY → agrupamento das informações;
-* COUNT → contagem dos registros;
-* ORDER BY → organização dos resultados.
+-  SELECT → seleção dos dados;
+-  JOIN → ligação entre tabelas relacionadas;
+-  SUBQUERY → cálculo intermediário usado como filtro (ex: ranquear e limitar as lojas antes de somar o valor);
+-  WHERE → filtro dos dados;
+- GROUP BY → agrupamento das informações;
+- COUNT → contagem dos registros;
+- ORDER BY → organização dos resultados.
   
 
 ---
