@@ -2,7 +2,8 @@
 
 SELECT 
 	  lojas15.id_vendedor,
-SUM(itens.preco) AS valor_cancelados
+SUM(itens.preco) AS valor_cancelados,
+RANK() OVER (ORDER BY SUM(itens.preco)DESC)AS RANKING 
 FROM itens_pedido itens
 INNER JOIN pedidos p
    	ON p.id_pedido = itens.id_pedido
@@ -21,7 +22,7 @@ INNER JOIN
 		    ON lojas15.id_vendedor = itens.id_vendedor
    	    WHERE p.status_pedido = 'canceled'
 		GROUP BY lojas15.id_vendedor
-		ORDER BY valor_cancelados DESC;
+		ORDER BY RANKING ;
 
 --Quais produtos apresentam o maior número de cancelamentos, 
 --a quais categorias pertencem e qual o impacto financeiro desses cancelamentos?
