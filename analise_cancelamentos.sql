@@ -24,30 +24,33 @@ INNER JOIN
 		GROUP BY lojas15.id_vendedor
 		ORDER BY RANKING ;
 
---Quais produtos apresentam o maior número de cancelamentos, 
---a quais categorias pertencem e qual o impacto financeiro desses cancelamentos?
+/*Quais produtos têm mais cancelamentos, de quais categorias são, 
+qual o impacto financeiro e qual percentual representam?*/
 
-SELECT proc.id_produto,proc.nome_categoria_produto,total_cancelados,
-	SUM(itens.preco) AS valor_cancelados
-FROM itens_pedido itens
-INNER JOIN pedidos p
-   	ON p.id_pedido = itens.id_pedido
-INNER JOIN
-	(SELECT 
-	   pro.nome_categoria_produto,itens.id_produto,
-		COUNT (itens.id_produto) as total_cancelados
+SELECT 
+       id_produto,
+	   nome_categoria_produto,
+	   total_cancelamento,
+	   valor_total,
+	   ROUND(valor_total * 100.0/SUM(valor_total) OVER (),2) AS porcentagem 
+FROM 	   
+	    (SELECT
+	 	 itens.id_produto,
+	 	 nome_categoria_produto,
+		 COUNT(distinct itens.id_pedido) total_cancelamento,
+	 	 SUM(itens.preco) valor_total
 	FROM itens_pedido itens 
-	INNER JOIN produtos pro 
-		ON itens.id_produto=pro.id_produto
-	INNER JOIN pedidos p
-		ON itens.id_pedido=p.id_pedido
+	INNER JOIN pedidos p 
+		 ON itens.id_pedido = p.id_pedido
+	INNER JOIN produtos pro
+		 ON itens.id_produto = pro.id_produto
 	WHERE status_pedido = 'canceled'
-	GROUP BY pro.nome_categoria_produto,itens.id_produto
-	 ) proc
-		ON proc.id_produto=itens.id_produto
-	WHERE status_pedido = 'canceled'	
-	GROUP BY proc.id_produto,proc.nome_categoria_produto,total_cancelados
-	ORDER BY valor_cancelados desc, proc.total_cancelados desc 
+	GROUP BY 
+	   	 itens.id_produto,
+	  	 nome_categoria_produto
+	) valor 
+ORDER BY
+	  porcentagem DESC;
 
 --Quais estados dos vendedores tiveram a maior quantidade de pedidos cancelados,
 --suas respectivas cidades e o valor total dos cancelamentos?
